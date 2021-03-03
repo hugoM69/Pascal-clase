@@ -10,11 +10,11 @@ BEGIN
     WHILE exit = 0 DO BEGIN
         c := READKEY;
         WRITELN(c);
-        CASE ORD(c) OF
-            48: actual := actual+1;
-            49: IF actual > maxi THEN
+        CASE c OF
+            '0': actual := actual+1;
+            '1': IF actual > maxi THEN
                     maxi := actual;
-            35: exit := 1;
+            '#': exit := 1;
             ELSE 
                 WRITELN('ERROR, solo se admiten 0, 1 y # para salir');
         END;
