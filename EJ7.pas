@@ -9,20 +9,20 @@ BEGIN
 	maxi := 0;
     WHILE exit = 0 DO BEGIN
         c := READKEY;
+        WRITELN(c);
         IF ORD(c) = 48 THEN
             actual := actual+1
         ELSE
             IF ORD(c) = 49 THEN BEGIN
                 IF actual > maxi THEN
-                    maxi := actual
+                    maxi := actual;
+                actual := 0;
                 END
             ELSE
                 IF ORD(c) = 35 THEN
-                    exit = 1
+                    exit := 1
                 ELSE 
-                    exit = 2;
+                    WRITELN('ERROR, solo se admiten 0, 1 y # para salir');
         END;
-    IF exit = 2 THEN
-        WRITELN('ERROR, solo se admiten 0 y 1');
     WRITELN('El numero maximo de ceros seguidos ha sido: ', maxi)
 END.
